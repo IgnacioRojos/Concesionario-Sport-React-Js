@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tituloNegocio{
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.botones{
+  margin-top: 100px;
+  margin-right: 200px;
+}
+
+.mensaje{
+  width: 450px;
+  margin-left: 720px;
+  margin-top: 50px;
+}
