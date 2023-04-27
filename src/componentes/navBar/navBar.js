@@ -1,7 +1,7 @@
 /*Importacion de bootstrap react y de el cartWidget*/
 
 import Button from 'react-bootstrap/Button';
-import Cart from "../cartWidget/cartWidget";
+import CartWidget from "../cartWidget/cartWidget";
 
 /*Funcion de la navBar con botones traidos de Bootstrap react,por debajo esta el component cartWidget(imagen con el numero hardcoreado*/
 
@@ -15,7 +15,7 @@ const navBar= () =>{
                 <Button variant="success">Motos 0KM</Button>
                 <Button variant="info">Mostos Usadas</Button>
             </div>
-            <Cart/>
+            <CartWidget/>
         </nav>
     )
 }
