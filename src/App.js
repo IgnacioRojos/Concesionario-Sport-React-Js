@@ -17,6 +17,7 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Routes>
+          <Route path="marca/:categoriaMarca" element={<ItemListContainer titulo={"Bienvenido Usuario/a"}/>}/>
           <Route path='/' element={<ItemListContainer titulo={"Bienvenido Usuario/a"}/>}/>
           <Route path="item/:autoId" element={<ItemDetailContainer/>}/>
         </Routes>

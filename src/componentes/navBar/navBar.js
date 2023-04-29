@@ -3,7 +3,7 @@ import "./navBar.css"
 import Button from 'react-bootstrap/Button';
 import CartWidget from "../cartWidget/cartWidget";
 import { Link, Route,Routes } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 /*Funcion de la navBar con botones traidos de Bootstrap react,por debajo esta el component cartWidget(imagen con el numero hardcoreado*/
 
 
@@ -11,16 +11,21 @@ import { Link, Route,Routes } from "react-router-dom";
 
 
 const navBar= () =>{
+
+    const tocoBoton=(e)=>{
+        console.log(e.target.id)
+    }
+
+
     return(
         <nav className='header'>
 
             <Link to={`/`}> <h3 className='tituloNegocio'>Concesionario Sport</h3> </Link>
 
             <div className='botones'>
+                <NavLink to="/"className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : ""}> <Button className='boton' variant="light" onClick={tocoBoton} id = "1">Todos Los Autos</Button> </NavLink>
 
-                <Button className='boton' variant="light">Todos Los Autos</Button> 
-                    
-                <Button className='boton' variant="warning">Fiat</Button>
+                <NavLink to={`ItemListContainer/:categoriaMarca`} className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : ""}> <Button className='boton' variant="warning">Fiat</Button> </NavLink>
 
                 <Button className="boton" variant="info">Wolsvagen</Button>
 

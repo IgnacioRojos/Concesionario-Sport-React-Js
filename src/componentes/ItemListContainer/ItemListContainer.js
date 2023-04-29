@@ -19,6 +19,7 @@ const ItemListConteiner = ({titulo}) =>{
    
     useEffect(()=>{
         const asyncFunc = categoriaMarca ? getCategoriaAutos : getAutos
+        
         asyncFunc(categoriaMarca)
             .then(Response=>{
                 setArrayAutos(Response)
