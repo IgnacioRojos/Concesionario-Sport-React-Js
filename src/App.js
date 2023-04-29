@@ -1,9 +1,10 @@
 /*Importaciones*/
-import { useEffect } from "react";
 import NavBar from "./componentes/navBar/navBar"
 import './App.css';
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
-import ItemCount from "./componentes/itemCount/itemCount";
+import { BrowserRouter, Route,Routes} from "react-router-dom";
+import ItemDetailContainer from "./componentes/itemDetailContainer/ItemDetailContainer";
+
 
 
 /*Funcion principal con el navBar y el ItemList*/
@@ -13,13 +14,16 @@ import ItemCount from "./componentes/itemCount/itemCount";
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <ItemListContainer titulo={"Bienvenido Usuario"}/>
-      <ItemCount inicial= {1} stock = {10} />
-
-
+      <BrowserRouter>
+        <NavBar/>
+        <ItemListContainer titulo={"Bienvenido Usuario/a"}/>
+        <Routes>
+          <Route path="item/:autoId" element={<ItemDetailContainer/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+    
+  ) 
 }
 
 export default App;

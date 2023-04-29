@@ -1,5 +1,5 @@
-import Item from "../../item/item"
-
+import Item from "../item/item"
+import "./itemList.css"
 
 const ItemList = ({autos}) =>{
     return(

@@ -1,44 +1,50 @@
 
 /*Importacion de bootstrap react*/
 import Alert from 'react-bootstrap/Alert';
-import { getAutos } from '../../AsyncMock';
+import { getAutos } from '../asyncMock.js';
 import { useEffect, useState } from 'react';
 import ItemList from '../itemList/itemList';
 /*Funcion de itemlist con un mensaje de bienvenida con props, el mensaje es un alert traido de bootstrap*/
 
 const ItemListConteiner = ({titulo}) =>{
 
-    const[autos,setAutos]= useState([])
+    const[arrayAutos,setArrayAutos]= useState([])
 
     useEffect(()=>{
-        setAutos(getAutos())
+        getAutos()
+            .then(Response=>{
+                setArrayAutos(Response)
+            })
+            .catch(Error=>{
+                console.log(Error)
+            })
+
     },[])
 
-
-
-
-    return(
-        <>
-            {[
-                'danger',
-            ].map((variant) => (
-                <Alert key={variant} variant={variant} className='mensaje'>
-                    {titulo}
-                </Alert>
-
-            ))}
-            
-            <ItemList auto={autos}/>
-
-
-        </>
     
-         
+    if(arrayAutos.length===0){
+        return(
+            <h2>Cargando Autos...</h2>
+        )
+    }else{
+        return(
+            <>
+                {[
+                    'danger',
+                ].map((variant) => (
+                    <Alert key={variant} variant={variant} className='mensaje'>
+                        {titulo}
+                    </Alert>
+    
+                ))}
+                
+                <ItemList autos={arrayAutos}/>
+    
+    
+            </>
+        )
+    }
 
-        
-
-
-    )
 }
 
 export default ItemListConteiner;
