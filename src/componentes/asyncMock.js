@@ -11,7 +11,16 @@ export const getAutos= ()=>{
 export const getFiltroAutos = (autoId)=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
-            resolve(Autos.find(aut=>aut.id ===autoId))
+            resolve(Autos.find(aut=>aut.id ===parseInt(autoId)))
         },2000)
     })
 }
+
+export const getCategoriaAutos = (autoMarca)=>{
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            resolve(Autos.filter(aut => aut.marca === autoMarca))
+        },2000)
+    })
+}
+

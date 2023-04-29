@@ -2,7 +2,7 @@ import ItemCount from "../itemCount/itemCount";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-const ItemDetail = (img,titulo,descripcion,marca,precio,cantidad) =>{
+const ItemDetail = ({img,titulo,descripcion,marca,precio,cantidad}) =>{
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={img} />
@@ -18,7 +18,7 @@ const ItemDetail = (img,titulo,descripcion,marca,precio,cantidad) =>{
                 <ListGroup.Item>{cantidad}</ListGroup.Item>
             </ListGroup>
             <Card.Body>
-            <ItemCount stock={1} inicial={1}/>            
+            <ItemCount stock={10} inicial={0}/>            
       </Card.Body>
     </Card>
     )

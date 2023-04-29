@@ -16,8 +16,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar/>
-        <ItemListContainer titulo={"Bienvenido Usuario/a"}/>
         <Routes>
+          <Route path='/' element={<ItemListContainer titulo={"Bienvenido Usuario/a"}/>}/>
           <Route path="item/:autoId" element={<ItemDetailContainer/>}/>
         </Routes>
       </BrowserRouter>

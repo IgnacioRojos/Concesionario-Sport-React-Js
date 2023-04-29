@@ -5,25 +5,34 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ()=>{
 
-    const [autos, setAutos] = useState([])
+    const [auto, setAuto] = useState([])
 
     const{autoId} = useParams()
 
     useEffect(()=>{
         getFiltroAutos(autoId)
             .then(response=>{
-                setAutos(response)
+                setAuto(response)
             })
             .catch(error=>{
                 console.error(error)
             })
     },[autoId])
 
-    return(
-        <div className="ItemDetailConteiner">
-            <ItemDetail {...autos}/>
-        </div>
-    )
+    if(auto.length === 0){
+        return(
+            <div className="ItemDetailConteiner">
+                <h1>Cargando Detalle...</h1>
+            </div>
+        )
+    }else{
+        return(
+            <div className="ItemDetailConteiner">
+                <ItemDetail {...auto}/>
+            </div>
+        )
+    }
+   
 }
 
 export default ItemDetailContainer;
