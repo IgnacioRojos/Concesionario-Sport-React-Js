@@ -2,6 +2,11 @@
     margin-left: 15px;
     
 }
-.botonLin{
+
+#boton{
+    text-decoration: none;
+}
+
+.tituloNegocio{
     text-decoration: none;
 }

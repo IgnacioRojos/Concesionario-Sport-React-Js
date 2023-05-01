@@ -1,4 +1,8 @@
+/*importaciones de useState*/
+
 import { useState } from "react";
+
+/*Componente itemCount donde se incremente o decrementa la cantidad de productos segun el stock que se maneja*/
 
 const ItemContador =({stock, inicial })=>{
     const[valor,setValor]= useState(inicial)

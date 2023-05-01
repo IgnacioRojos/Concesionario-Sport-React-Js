@@ -7,7 +7,8 @@ import ItemDetailContainer from "./componentes/itemDetailContainer/ItemDetailCon
 
 
 
-/*Funcion principal con el navBar y el ItemList*/
+/*Funcion principal con el navBar,ItemListContainer donde enruté para que se muestre los autos por marca o vuelva al catalogo completo, por
+ultimo en cada tarjeta de los autos tiene un link hacia el detalle del auto*/
 
 
 
@@ -17,7 +18,7 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Routes>
-          <Route path="marca/:categoriaMarca" element={<ItemListContainer titulo={"Bienvenido Usuario/a"}/>}/>
+          <Route path="/marca/:categoriaMarca" element={<ItemListContainer titulo={"Bienvenido Usuario/a"}/>}/>
           <Route path='/' element={<ItemListContainer titulo={"Bienvenido Usuario/a"}/>}/>
           <Route path="item/:autoId" element={<ItemDetailContainer/>}/>
         </Routes>

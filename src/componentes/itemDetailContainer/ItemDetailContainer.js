@@ -1,7 +1,12 @@
+/*importaciones de useState, useEfect, componente itemDetail, el archivo asyncMock y css*/
+
 import { useEffect,useState } from "react";
 import { getFiltroAutos } from "../asyncMock";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import "./itemDetailContainer.css"
+
+/*componente que contiene al itemDetail utilizando un efecto para poder mostrar un solo item con sus datos*/
 
 const ItemDetailContainer = ()=>{
 
@@ -27,7 +32,7 @@ const ItemDetailContainer = ()=>{
         )
     }else{
         return(
-            <div className="ItemDetailConteiner">
+            <div className="ItemDetailConteiner2">
                 <ItemDetail {...auto}/>
             </div>
         )

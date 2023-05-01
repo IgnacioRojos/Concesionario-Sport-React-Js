@@ -1,12 +1,15 @@
+/*Importacion de bootstrap react, el archivo asyncmock, react router dom*/
 
-/*Importacion de bootstrap react*/
 import Alert from 'react-bootstrap/Alert';
 import { getAutos, getCategoriaAutos } from '../asyncMock.js';
 import { useEffect, useState } from 'react';
 import ItemList from '../itemList/itemList';
 import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
-/*Funcion de itemlist con un mensaje de bienvenida con props, el mensaje es un alert traido de bootstrap*/
+import "./ItemListContainer.css"
+
+/*Funcion de itemlist con un mensaje de bienvenida con props, el mensaje es un alert traido de bootstrap
+Este componente contiene al componente item, uso el useState para mostrar el array de los autos */
 
 const ItemListConteiner = ({titulo}) =>{
 
@@ -33,7 +36,7 @@ const ItemListConteiner = ({titulo}) =>{
     
     if(arrayAutos.length===0){
         return(
-            <h2>Cargando Autos...</h2>
+            <h2 className='tituloAlerta'>Cargando Autos...</h2>
         )
     }else{
         return(
