@@ -1,10 +1,10 @@
 /*importaciones de useState*/
-
+import "./itemCount.css";
 import { useState } from "react";
 
 /*Componente itemCount donde se incremente o decrementa la cantidad de productos segun el stock que se maneja*/
 
-const ItemContador =({stock, inicial })=>{
+const ItemContador =({stock, inicial, onAdd })=>{
     const[valor,setValor]= useState(inicial)
 
     const incrementar = ()=>{
@@ -26,6 +26,11 @@ const ItemContador =({stock, inicial })=>{
                 <h4 className="number">{valor}</h4>
                 <button className="button" onClick={decrementar}>-</button>
             </div>
+            <button className="buttonComprar" onClick={()=> onAdd(valor)} disabled={!stock}>
+                    Agregar Al Carrito
+            </button>
+            
+            
 
         </div>
         
