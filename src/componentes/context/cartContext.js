@@ -1,4 +1,7 @@
 import { createContext, useState } from "react";
+import { Autos } from '../DataAutos/data.js'; 
+
+
 
 export const cartContext = createContext({
     cart: []
@@ -30,10 +33,10 @@ export const CartProvider = ({children }) =>{
         return cart.some(c => c.id === id)
     }
 
-    const getTotal = (precio) =>{
-        var total = 0; 
+    const getTotal = () =>{
+        let total = 0; 
         cart.forEach((c) =>{
-            total += (c.cantidadAgregada * precio )
+            total = total + (c.cantidadAgregada * parseInt(Autos.precio) )
         })
         return total;
     }

@@ -30,11 +30,14 @@ const Cart = () => {
                                 </p>
                                 
                             </Card.Text>
-                            <h3>{getTotal(item.precio)}</h3>
+                            
                             <button onClick={()=> removeAuto(item.id)} variant="primary">Eliminar Auto</button>
                         </Card.Body>
                     </Card>
                 )}
+                
+                <h3>{getTotal()}</h3>
+
                 <button onClick={()=> clearCart() } className="button"> Limpiar El Carrito</button>
                 <Link to="/checkOut">Finalizar La Compra</Link>
             </div>

@@ -7,7 +7,7 @@ export const Autos = [
         marca:"fiat", 
         id: 1,
         descripcion:"Motor y transmisión: Cilindrada 1.368 N° de cilindros y disposición 4 en linea Potencia máxima (CV/rpm) 85 / 5.750",
-        precio:"1.500.000"
+        precio: 1500000,
     },
 
     {
@@ -17,7 +17,7 @@ export const Autos = [
         marca: "wolsvagen", 
         id: 2,
         descripcion:"Motor y transmisión: Cilindrada 1984 N° de cilindros y disposición 4 Potencia máxima (CV/rpm) 211",
-        precio:"4.265.156"
+        precio:4265156
     },
 
     {
@@ -27,7 +27,7 @@ export const Autos = [
         marca:"wolsvagen", 
         id: 3,
         descripcion:"Motor y transmisión: Cilindrada 1.781 N° de cilindros Valvulas 4 20V Potencia 180 CV " ,
-        precio:"6.325.148"
+        precio: 6325148 ,
     },
 
     {
@@ -37,7 +37,7 @@ export const Autos = [
         marca:"chevrolet",
         id: 4,
         descripcion:"Motor y transmisión: Cilindrada 1.389 Número de Cilindros: 4 Potencia Máxima (CV): 60", 
-        precio: "1.200.145"
+        precio: 1200145
     },
 
     {
@@ -47,7 +47,7 @@ export const Autos = [
         marca:"ford", 
         id: 5,
         descripcion:"Motor y transmisión: Cilindrada: 1.596 Número de Cilindros: 4 Potencia Máxima (CV): 120" , 
-        precio:"8.544.168"
+        precio: 8544168
     },
 
     {
@@ -57,7 +57,7 @@ export const Autos = [
         marca:"wolsvagen", 
         id: 6,
         descripcion:"Motor y transmisión: Cilindrada: 999 Número de cilindros: 3 Potencia máxima: 75 CV" , 
-        precio:"9.221.147"
+        precio: 9221147
     },
 
     {
@@ -67,7 +67,7 @@ export const Autos = [
         marca:"ford", 
         id: 7,
         descripcion:"Motor y transmisión: Cilindrada: 1.499 c.c. Número de Cilindros: 3 Potencia Máxima (CV): 123 CV", 
-        precio:"10.152.000" 
+        precio: 10152000 
     },
 
     {
@@ -77,7 +77,7 @@ export const Autos = [
         marca:"fiat", 
         id:8,
         descripcion: "Motor y transmisión: Cilindrada: 1598 c.c. Número de Cilindros: 4 Potencia máxima (CV): 115 ", 
-        precio:"3.874.168"
+        precio: 3874168
     },
 
     {
@@ -87,7 +87,7 @@ export const Autos = [
         marca:"toyota", 
         id:9,
         descripcion:"Motor y transmisión:  Cilindrada: 1496 c.c. Número de Cilindros: 4 Potencia máxima (CV): 107" , 
-        precio:"7.111.125"
+        precio: 7111125
     },
 
     {
@@ -97,7 +97,7 @@ export const Autos = [
         marca:"toyota", 
         id:10,
         descripcion:"Motor y transmisión:  Cilindrada: 2.755 c.c. Número de Cilindros: 4 Potencia máxima (CV): 177" , 
-        precio:"4.882.975"
+        precio: 4882975
     },
 
     {
@@ -107,7 +107,7 @@ export const Autos = [
         marca:"ford", 
         id: 11,
         descripcion:"Motor y transmisión: Cilindrada:3.500 c.c. Número de Cilindros: 6 Potencia máxima (CV):456 " , 
-        precio:"8.547.999"
+        precio: 8547999
     },
 
     {
@@ -117,7 +117,7 @@ export const Autos = [
         marca:"fiat", 
         id:12,
         descripcion:"Motor y transmisión: Cilindrada:1.332 c.c. Número de Cilindros: 4 Potencia máxima (CV): 99 ",
-        precio: "5.213.697"
+        precio: 5213697
     },
     
     {
@@ -127,7 +127,7 @@ export const Autos = [
         marca:"wolsvagen",
         id:13,
         descripcion:"Motor y transmisión: Cilindrada: 1.599 c.c. Número de Cilindros: 4 Potencia máxima (CV): 101", 
-        precio:"7.114.777"
+        precio: 7114777
     },
 
     {
@@ -137,7 +137,7 @@ export const Autos = [
         marca:"wolsvagen", 
         id:14,
         descripcion:"Motor y transmisión: Cilindrada: 1.589 c.c. Número de Cilindros: 4 Potencia máxima (CV): 110",
-        precio:"5.347.987"
+        precio: 5347987
     },
 
     {
@@ -147,7 +147,7 @@ export const Autos = [
         marca:"chevrolet", 
         id:15,
         descripcion:"Motor y transmisión: Cilindrada: 1399 c.c. Número de Cilindros: 4 Potencia máxima (CV): 153" , 
-        precio:"78.111.169"
+        precio: 78111169
     },
 
     {
@@ -157,7 +157,7 @@ export const Autos = [
         marca:"fiat", 
         id:16,
         descripcion:"Motor y transmisión: Cilindrada: 999 c.c. Número de Cilindros: 4 Potencia máxima (CV): 70" , 
-        precio:"12.000.000"
+        precio: 12000000
     },
 
     {
@@ -167,7 +167,7 @@ export const Autos = [
         marca:"ford", 
         id:17,
         descripcion:"Motor y transmisión: Cilindrada: 1599 c.c. Número de Cilindros: 4 Potencia máxima (CV): 125", 
-        precio: "3.000.000"
+        precio: 3000000
     },
 
     {
@@ -177,7 +177,7 @@ export const Autos = [
         marca:"jeep", 
         id:18,
         descripcion: "Motor y transmisión:  Cilindrada: 3605 c.c. Número de Cilindros: 4 Potencia máxima (CV): 286", 
-        precio:"7.588.498"
+        precio: 7588498
     },
 
     {
@@ -187,7 +187,7 @@ export const Autos = [
         marca:"fiat",
         id:19,
         descripcion:"Motor y transmisión:  Cilindrada: 1.747 c.c. Número de Cilindros: 4 Potencia máxima (CV): 130 ",
-        precio:"6.589.000"
+        precio: 6589000
 
     },
 
@@ -198,7 +198,7 @@ export const Autos = [
         marca:"jeep",
         id:20,
         descripcion:"Motor y transmisión:  Cilindrada: 2360 c.c. Número de Cilindros: 4 Potencia máxima (CV): 175",
-        precio:"9.672.123" 
+        precio: 9672123 
     }
 
 ]
