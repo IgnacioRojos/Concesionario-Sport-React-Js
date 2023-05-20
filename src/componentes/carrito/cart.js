@@ -2,44 +2,45 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { cartContext } from "../context/cartContext";
 import Card from 'react-bootstrap/Card';
-
+import Button from 'react-bootstrap/Button';
+import "./cart.css";
 
 
 const Cart = () => {
     const {cart, clearCart,removeAuto,getTotal}= useContext(cartContext) 
     
-    if(getTotal=== 0){
-            return(
-                <div>
-                    <h1>No Hay Productos En El Carrito</h1>
-                    <Link to="/" className="option">Volver A Comprar</Link>
-                </div>
-            )
-    } else{
+    if(cart.length === 0){
         return(
             <div>
+                <h1>No Hay Productos En El Carrito</h1>
+                <Link to="/" className="option">Volver A Comprar</Link>
+            </div>
+        )
+    }else{
+        return(
+            <div className="cardCarrito">
                 {cart.map((item)=>
                     <Card>
                         <Card.Body className="cart-item-container">
-                            <Card.Title>{item.titulo}</Card.Title>
+                            <Card.Title><h2>{item.titulo}:</h2></Card.Title>
                             <Card.Img variant="top" src={item.img} style={{ width: '18rem' }}/>
                             <Card.Text>
-                                <p> Marca: {item.marca}<br/>
-                                    Precio: {item.precio}<br/>
-                                    cantidad: {item.cantidadAgregada}
-                                </p>
+                                <h4>Marca: {item.marca}</h4> <br/>
+                                <h4>Precio: {item.precio}</h4><br/>
+                                <h4>cantidad: {item.cantidadAgregada}</h4>
+                                
                                 
                             </Card.Text>
                             
-                            <button onClick={()=> removeAuto(item.id)} variant="primary">Eliminar Auto</button>
+                            <Button onClick={()=> removeAuto(item.id)} variant="danger">Eliminar Auto</Button>
                         </Card.Body>
                     </Card>
                 )}
                 
-                <h3>{getTotal()}</h3>
+                <h3 className="total">Total: {getTotal()}</h3>
 
-                <button onClick={()=> clearCart() } className="button"> Limpiar El Carrito</button>
-                <Link to="/checkOut">Finalizar La Compra</Link>
+                <Button onClick={()=> clearCart() } className="button" variant="danger"> Limpiar El Carrito</Button>
+                <Button className="button" variant="info"><Link to="/checkOut" className="linkCheck">Finalizar La Compra</Link></Button>
             </div>
         )
     }

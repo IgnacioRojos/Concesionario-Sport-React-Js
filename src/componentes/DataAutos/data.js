@@ -199,6 +199,27 @@ export const Autos = [
         id:20,
         descripcion:"Motor y transmisión:  Cilindrada: 2360 c.c. Número de Cilindros: 4 Potencia máxima (CV): 175",
         precio: 9672123 
+    },
+
+    {
+        img:"https://autotest.com.ar/wp-content/uploads/2022/12/Toyota-GR-86-Trompa.jpg",
+        titulo:"Toyota GR 86",
+        cantidad:5,
+        marca:"toyota",
+        id:21,
+        descripcion:"Motor y transmisión:  Cilindrada: 2400 c.c. Número de Cilindros: 4 Potencia máxima (CV): 235 CV",
+        precio: 5672123 
+    },
+    
+    {
+        img:"https://www.carsmagazine.com.ar/wp-content/uploads/2020/11/toyota-corolla-gr-sport-5.jpg",
+        titulo:"Toyota Corolla GR",
+        cantidad:89,
+        marca:"toyota",
+        id:22,
+        descripcion:"Motor y transmisión:  Cilindrada: 2000 c.c. Número de Cilindros: 4 Potencia máxima (CV): 170 CV",
+        precio: 10672123 
     }
+
 
 ]

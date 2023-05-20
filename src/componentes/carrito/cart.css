@@ -1,0 +1,21 @@
+.linkCheck{
+    text-decoration: none;
+    color: white;
+}
+
+.button{
+    margin-left: 20px;
+    margin-top: 20px;
+    
+}
+
+.total{
+    margin-top: 20px;
+}
+
+.cart-item-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}

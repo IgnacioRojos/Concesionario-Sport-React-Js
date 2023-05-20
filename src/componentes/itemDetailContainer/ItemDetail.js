@@ -6,6 +6,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { cartContext } from "../context/cartContext";
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -47,7 +48,7 @@ const ItemDetail = ({img,titulo,descripcion,marca,precio,cantidad,id}) =>{
             <Card.Body>
             {
                 cantidadAgregada > 0 ?(
-                    <Link to= "/cart" className="Option">Finalizar Compra</Link>
+                    <Button className="button" variant="info"><Link to= "/cart" className="Option">Finalizar Compra</Link></Button>
                 ) : (
                     <ItemCount stock={cantidad} inicial={0} onAdd={handleOnAdd}/>  
                 )

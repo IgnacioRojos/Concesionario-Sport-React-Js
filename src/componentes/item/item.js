@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import "./item.css"
 import React from "react";
+import Button from 'react-bootstrap/Button';
 
 /*el componente item con sus atributos para mostrar la tarjeta del auto con sus datos*/
 
@@ -19,7 +20,7 @@ const Item = ({id,titulo,marca,cantidad,precio,img})=>{
                     <h5>Stock: {cantidad}</h5>
                 </Card.Text>
                 
-                <Link to={`/item/${id}`} className="Option">Ver Detalle</Link>
+                <Button variant="info"><Link to={`/item/${id}`} className="Option">Ver Detalle</Link></Button>
             </Card.Body>
         </Card>
         

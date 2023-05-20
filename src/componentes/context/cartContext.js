@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { Autos } from '../DataAutos/data.js'; 
+
 
 
 
@@ -20,6 +20,8 @@ export const CartProvider = ({children }) =>{
         }
     }
 
+    
+
     const removeAuto = (id) =>{
         const cartUpdated = cart.filter(c => c.id !== id)
         setCart(cartUpdated)
@@ -36,13 +38,21 @@ export const CartProvider = ({children }) =>{
     const getTotal = () =>{
         let total = 0; 
         cart.forEach((c) =>{
-            total = total + (c.cantidadAgregada * parseInt(Autos.precio) )
+            total = total + (c.cantidadAgregada * c.precio )
         })
         return total;
     }
 
+    const cantidad = ()=>{
+        let quantity = 0;
+        cart.forEach((c)=>{
+            quantity = quantity + c.cantidadAgregada 
+        })
+        return quantity;
+    }
+
     return(
-        <cartContext.Provider value={{cart, addAuto, removeAuto, clearCart, isInCart,getTotal}}>
+        <cartContext.Provider value={{cart, addAuto, removeAuto, clearCart, isInCart,getTotal,cantidad}}>
             {children}
         </cartContext.Provider>
     )
