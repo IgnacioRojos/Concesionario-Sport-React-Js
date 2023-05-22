@@ -1,5 +1,5 @@
 import {db} from './firebase';
-import { collection, getDocs, where, query} from 'firebase/firestore';
+import { collection, getDocs, where, query,getDoc} from 'firebase/firestore';
 
 export const getAutos = () =>{
     const coleccionAutos =  collection(db,"Autos")
@@ -42,8 +42,8 @@ export const getAutosPorCategoria = (categoriaMarca) =>{
 
 export const filtroAutos = (autoId) =>{
     const coleccionAutos = collection(db,"Autos")
-    const filtroId = query(coleccionAutos, where("id", "===",autoId))
-    return getDocs(filtroId)
+    const filtroId = query(coleccionAutos, where("id", "==",autoId))
+    return getDoc(filtroId)
     .then((resultado) =>{
         const arrayDeaAutos = resultado.docs
         const array = arrayDeaAutos.map((doc)=>{
