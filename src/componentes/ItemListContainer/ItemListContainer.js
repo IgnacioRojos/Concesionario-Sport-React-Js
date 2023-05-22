@@ -7,7 +7,7 @@ import ItemList from '../itemList/itemList';
 import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
 import "./ItemListContainer.css"
-import { getAutos } from '../../utils.js';
+import { getAutos, getAutosPorCategoria } from '../../utils.js';
 
 /*Funcion de itemlist con un mensaje de bienvenida con props, el mensaje es un alert traido de bootstrap
 Este componente contiene al componente item, uso el useState para mostrar el array de los autos */
@@ -24,12 +24,7 @@ const ItemListConteiner = ({titulo}) =>{
 
    
     useEffect(()=>{
-        const res = getAutos();
-        res.then((resultado)=>{
-            setArrayAutos(resultado);
-        })
-
-        /*const asyncFunc = categoriaMarca ? getCategoriaAutos : getAutos
+        const asyncFunc = categoriaMarca ? ()=> getAutosPorCategoria(categoriaMarca) : getAutos
         
         asyncFunc(categoriaMarca)
             .then(Response=>{
@@ -37,7 +32,7 @@ const ItemListConteiner = ({titulo}) =>{
             })
             .catch(Error=>{
                 console.log(Error)
-            })*/
+            })
 
     },[categoriaMarca])
 
