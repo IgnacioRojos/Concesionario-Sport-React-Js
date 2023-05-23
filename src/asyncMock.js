@@ -14,13 +14,13 @@ Funcion 3: esta funcion se exporta a itemListContainer para mostrar autos de una
     })
 }*/
 
-export const getFiltroAutos = (autoId)=>{
+/*export const getFiltroAutos = (autoId)=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
             resolve(Autos.find(aut=>aut.id ===parseInt(autoId)))
         },2000)
     })
-}
+}*/
 
 /*export const getCategoriaAutos = (autoMarca)=>{
     return new Promise((resolve)=>{

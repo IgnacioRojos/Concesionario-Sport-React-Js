@@ -6,6 +6,7 @@ import "./item.css"
 import React from "react";
 import Button from 'react-bootstrap/Button';
 
+
 /*el componente item con sus atributos para mostrar la tarjeta del auto con sus datos*/
 
 const Item = ({id,titulo,marca,cantidad,precio,img})=>{

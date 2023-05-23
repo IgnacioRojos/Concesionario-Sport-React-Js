@@ -22,10 +22,6 @@ const ItemListConteiner = ({titulo}) =>{
 
     const {categoriaMarca} = useParams()
 
-    const unaSolaVez =(e)=>{
-        e.stopPropagation();
-    }
-
    
     useEffect(()=>{
         const asyncFunc = categoriaMarca ? ()=> getAutosPorCategoria(categoriaMarca) : getAutos

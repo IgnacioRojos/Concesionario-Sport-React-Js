@@ -5,7 +5,7 @@ import { collection, getDocs, where, query,getDoc,doc} from 'firebase/firestore'
 
 
 export const getAutos = () =>{
-    const coleccionAutos =  collection(db,"Autos")
+    const coleccionAutos =  collection(db,"Autos2")
     return getDocs(coleccionAutos)
         .then((respuesta)=>{
             const arrayDocumentos = respuesta.docs
@@ -24,7 +24,7 @@ export const getAutos = () =>{
 }
 
 export const getAutosPorCategoria = (categoriaMarca) =>{
-    const coleccionAutos =  collection(db,"Autos")
+    const coleccionAutos =  collection(db,"Autos2")
     const filtro = query(coleccionAutos, where("marca","==",categoriaMarca))
     return getDocs(filtro)
     .then((respuesta)=>{
@@ -46,14 +46,14 @@ export const getAutosPorCategoria = (categoriaMarca) =>{
 /*export const filtroAutos = async (autoId) =>{
 
     try{
-        const documentoAuto = doc(db,"Autos",autoId)
+        const documentoAuto = doc(db,"Autos2",autoId)
         const response = await getDoc(documentoAuto);
         response.data()
             setAuto({id: response.id,...response.data()}) 
     }catch(err){
         console.log(err) 
-    }*/
-       
+    }
+}   */    
     /* const coleccionAutos = collection(db,"Autos")
     const filtroId = query(coleccionAutos, where("id", "==",autoId))*/
     /*return getDocs(filtroId)
