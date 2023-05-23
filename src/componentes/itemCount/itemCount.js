@@ -1,6 +1,7 @@
 /*importaciones de useState*/
 import "./itemCount.css";
 import { useState } from "react";
+import Button from 'react-bootstrap/Button';
 
 /*Componente itemCount donde se incremente o decrementa la cantidad de productos segun el stock que se maneja*/
 
@@ -22,13 +23,14 @@ const ItemContador =({stock, inicial, onAdd })=>{
     return(
         <div className="counter">
             <div className="controls">
-                <button className="button" onClick={incrementar}>+</button>
+                <Button className="buttoninc" onClick={incrementar}>+</Button>
                 <h4 className="number">{valor}</h4>
-                <button className="button" onClick={decrementar}>-</button>
+                <Button className="buttondec" onClick={decrementar}>-</Button>
+                
             </div>
-            <button className="buttonComprar" onClick={()=> onAdd(valor)} disabled={!stock}>
+            <Button className="buttonComprar" onClick={()=> onAdd(valor)} disabled={!stock}>
                     Agregar Al Carrito
-            </button>
+            </Button>
             
             
 

@@ -7,6 +7,7 @@ import ItemDetailContainer from "./componentes/itemDetailContainer/ItemDetailCon
 import { CartProvider } from "./componentes/context/cartContext";
 import Cart  from "./componentes/carrito/cart"
 import CartWidget from "./componentes/cartWidget/cartWidget";
+import CheckOut from "./componentes/checkOut/checkOut";
 
 /*Funcion principal con el navBar,ItemListContainer donde enruté para que se muestre los autos por marca o vuelva al catalogo completo, por
 ultimo en cada tarjeta de los autos tiene un link hacia el detalle del auto*/
@@ -25,6 +26,7 @@ function App() {
               <Route path="item/:autoId" element={<ItemDetailContainer/>}/>
               <Route path="/cart" element={<Cart/>}/>
               <Route path="/cart" element={<CartWidget/>}/>
+              <Route path="/checkOut" element={<CheckOut/>}/>
             </Routes>
         </CartProvider>
       </BrowserRouter>

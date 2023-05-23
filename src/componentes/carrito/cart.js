@@ -12,8 +12,8 @@ const Cart = () => {
     if(cart.length === 0){
         return(
             <div>
-                <h1>No Hay Productos En El Carrito</h1>
-                <Link to="/" className="option">Volver A Comprar</Link>
+                <h1 className="advertencia">No Hay Productos En El Carrito</h1>
+                <Button variant="info"><Link to="/" className="option">Volver A Comprar</Link></Button>
             </div>
         )
     }else{
@@ -40,7 +40,7 @@ const Cart = () => {
                 <h3 className="total">Total: {getTotal()}</h3>
 
                 <Button onClick={()=> clearCart() } className="button" variant="danger"> Limpiar El Carrito</Button>
-                <Button className="button" variant="info"><Link to="/checkOut" className="linkCheck">Finalizar La Compra</Link></Button>
+                <Button className="button" variant="info"><Link to={`/checkOut`} className="linkCheck">Finalizar La Compra</Link></Button>
             </div>
         )
     }
