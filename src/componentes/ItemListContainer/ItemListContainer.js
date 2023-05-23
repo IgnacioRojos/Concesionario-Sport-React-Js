@@ -22,6 +22,10 @@ const ItemListConteiner = ({titulo}) =>{
 
     const {categoriaMarca} = useParams()
 
+    const unaSolaVez =(e)=>{
+        e.stopPropagation();
+    }
+
    
     useEffect(()=>{
         const asyncFunc = categoriaMarca ? ()=> getAutosPorCategoria(categoriaMarca) : getAutos
@@ -43,7 +47,8 @@ const ItemListConteiner = ({titulo}) =>{
         )
     }else{
         return(
-            <>
+            <>  
+            
                 
                  {['danger'].map((variant) => (
                         <Alert show={show} key={variant} variant={variant} className='mensaje'>

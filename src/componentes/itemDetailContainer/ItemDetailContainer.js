@@ -6,28 +6,46 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import "./itemDetailContainer.css"
 import{getAutosPorCategoria,filtroAutos} from '../../utils.js';
+import { db } from "../../firebase";
+import {getDoc,doc} from 'firebase/firestore';
 
 /*componente que contiene al itemDetail utilizando un efecto para poder mostrar un solo item con sus datos*/
 
 const ItemDetailContainer = ()=>{
-
-    const [auto, setAuto] = useState([])
+    const [auto, setAuto] = useState({})
 
     const{autoId} = useParams()
 
-    useEffect(()=>{
-        const res = getAutosPorCategoria(autoId)
-        res.then((resultado)=>{
-            setAuto(resultado);
-        });
+    const filtroAutos = async (autoId) =>{
         
-        filtroAutos(autoId)
-            .then(response=>{
-                setAuto(response)
+        const  docRef = doc(db,"Autos",autoId)
+        getDoc(docRef)
+            .then((response) =>{
+                const data = response.data()
+                const autosAdapter = {id: response.id, ...data }
+                setAuto(autosAdapter)
             })
-            .catch(error=>{
-                console.error(error)
-            })
+        /*try{
+            const documentoAuto = doc(db,"Autos",autoId)
+            const response = await getDoc(documentoAuto);
+            response.data()
+            setAuto({id: response.id, ...response.data()})
+                const data = doc.data();
+                const id =doc.id;    
+                data.id = id;
+                return data;*/
+            
+         
+        .catch(err =>{
+            console.log(err)
+        })
+            
+        
+    }
+
+
+    useEffect(()=>{ 
+        filtroAutos()
     },[autoId])
 
     if(auto.length === 0){

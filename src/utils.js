@@ -1,5 +1,8 @@
 import {db} from './firebase';
-import { collection, getDocs, where, query,getDoc} from 'firebase/firestore';
+import { collection, getDocs, where, query,getDoc,doc} from 'firebase/firestore';
+
+
+
 
 export const getAutos = () =>{
     const coleccionAutos =  collection(db,"Autos")
@@ -40,10 +43,20 @@ export const getAutosPorCategoria = (categoriaMarca) =>{
     })
 }
 
-export const filtroAutos = (autoId) =>{
-    const coleccionAutos = collection(db,"Autos")
-    const filtroId = query(coleccionAutos, where("id", "==",autoId))
-    return getDoc(filtroId)
+/*export const filtroAutos = async (autoId) =>{
+
+    try{
+        const documentoAuto = doc(db,"Autos",autoId)
+        const response = await getDoc(documentoAuto);
+        response.data()
+            setAuto({id: response.id,...response.data()}) 
+    }catch(err){
+        console.log(err) 
+    }*/
+       
+    /* const coleccionAutos = collection(db,"Autos")
+    const filtroId = query(coleccionAutos, where("id", "==",autoId))*/
+    /*return getDocs(filtroId)
     .then((resultado) =>{
         const arrayDeaAutos = resultado.docs
         const array = arrayDeaAutos.map((doc)=>{
@@ -53,10 +66,9 @@ export const filtroAutos = (autoId) =>{
             return data
 
         })
-        return array 
-    })
-    .catch((err) =>{
+        return array */
+    /*catch((err) =>{
         console.log(err)
-    })
-}
+    })*/
+
 
