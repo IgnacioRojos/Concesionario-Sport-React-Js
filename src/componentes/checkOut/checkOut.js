@@ -29,17 +29,17 @@ const CheckOut = ()=>{
 
             const ids = cart.map(aut =>aut.id)
             const autosRef = collection(db,"Autos2")
-            const autosFireStore= await getDocs(query(autosRef,where(documentId,"in",ids)))
+            const autosFireStore= await getDocs(query(autosRef,where(documentId(),"in",ids)))
             const {docs} = autosFireStore
 
             docs.forEach(doc =>{
                 const dataDoc = doc.data()
-                const stockDb = dataDoc.cantidad
+                const stockDb = dataDoc.cantidadAgregada
 
                 const autosCart = cart.find(aut => aut.id === doc.id)
-                const autoStock = autosCart?.cantidad
+                const autoStock = autosCart?.cantidadAgregada
 
-                if(stockDb > autoStock){
+                if(stockDb >= autoStock){
                     batch.update(doc.ref,{cantidad: stockDb - autoStock})
                 }else{
                     outOffStock.push({id:doc.id,...dataDoc})

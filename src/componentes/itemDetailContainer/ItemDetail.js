@@ -24,7 +24,7 @@ const ItemDetail = ({img,titulo,descripcion,marca,precio,cantidad,id}) =>{
         setCantidadAgregadada(cantidadAgregada)     
   
         const auto = {
-            id,titulo,precio,descripcion,marca,img
+            id,titulo,precio,descripcion,marca,img,cantidad 
         }
 
         valorContexto.addAuto(auto,cantidadAgregada)
@@ -50,7 +50,7 @@ const ItemDetail = ({img,titulo,descripcion,marca,precio,cantidad,id}) =>{
                 cantidadAgregada > 0 ?(
                     <Button className="button" variant="info"><Link to= "/cart" className="Option">Finalizar Compra</Link></Button>
                 ) : (
-                    <ItemCount stock={cantidad} inicial={0} onAdd={handleOnAdd}/>  
+                    <ItemCount stock={cantidad} inicial={1} onAdd={handleOnAdd}/>  
                 )
             }
           

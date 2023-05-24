@@ -1,7 +1,6 @@
 /*Importacion de bootstrap react, el archivo asyncmock, react router dom*/
 
 import Alert from 'react-bootstrap/Alert';
-/*import { getAutos, getCategoriaAutos } from '../asyncMock.js';*/
 import { useEffect, useState } from 'react';
 import ItemList from '../itemList/itemList';
 import Button from 'react-bootstrap/Button';

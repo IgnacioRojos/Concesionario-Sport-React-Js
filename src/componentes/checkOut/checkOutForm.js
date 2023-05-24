@@ -33,7 +33,7 @@ const CheckOutForm = ({onConfirm})=>{
                     <input className="Input" type="text" value={email} onChange={({target})=> setEmail(target.value)}/>
                 </label>
                 <div className="Label">
-                    <Button className="Button" type="submit" onClick={handleConfirm}>Crear Orden</Button>
+                    <Button className="Button" type="submit">Crear Orden</Button>
                 </div>
             </form>
             
