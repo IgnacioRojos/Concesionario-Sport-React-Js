@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCJ4b5HyEfdtXTVjUFI_yQx-62hvYCgiBo",
-  authDomain: "concesionario-sport.firebaseapp.com",
-  projectId: "concesionario-sport",
-  storageBucket: "concesionario-sport.appspot.com",
-  messagingSenderId: "837458259395",
-  appId: "1:837458259395:web:8abb8e42cbf91351aca176"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase

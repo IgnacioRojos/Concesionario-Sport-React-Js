@@ -11,7 +11,7 @@ const CheckOutForm = ({onConfirm})=>{
     const handleConfirm = (e) =>{
         e.preventDefault()
         const usuDatos ={
-            nombre,email,tel
+            nombre,email,telefono:tel
         }
 
         onConfirm(usuDatos)

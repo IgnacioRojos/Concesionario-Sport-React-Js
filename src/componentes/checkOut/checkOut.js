@@ -7,7 +7,7 @@ import CheckOutForm from "./checkOutForm";
 
 
 const CheckOut = ()=>{
-    const[cargando, setCargando] = useState(true);
+    const[cargando, setCargando] = useState(false);
     const[ordenId, setOrdenId] = useState("");
 
     const {cart,getTotal,clearCart} = useContext(cartContext)
@@ -20,7 +20,7 @@ const CheckOut = ()=>{
                     nombre,telefono,email
                 },
                 items: cart,
-                totalCompra:getTotal,
+                totalCompra:getTotal(),
                 fecha: Timestamp.fromDate(new Date())
             }
 
@@ -34,7 +34,7 @@ const CheckOut = ()=>{
 
             docs.forEach(doc =>{
                 const dataDoc = doc.data()
-                const stockDb = dataDoc.cantidadAgregada
+                const stockDb = dataDoc.cantidad
 
                 const autosCart = cart.find(aut => aut.id === doc.id)
                 const autoStock = autosCart?.cantidadAgregada
@@ -53,6 +53,7 @@ const CheckOut = ()=>{
                 const ordenAdd = await addDoc(ordenRef,objectOrder)
                 setOrdenId(ordenAdd.id)
                 clearCart()
+                
             }else{
                 console.log("Productos fuera de stock")
             }
@@ -66,10 +67,10 @@ const CheckOut = ()=>{
     }
 
     if(cargando){
-        <h1>Se Esta Cargando La Orden...</h1>
+        return <h1>Se Esta Cargando La Orden...</h1>
     }
     if(ordenId){
-        <h1>Su Numero de Orden es el:{ordenId}</h1>
+        return <h1>Su Numero de Orden es el:{ordenId}</h1>
     }
 
     return(
