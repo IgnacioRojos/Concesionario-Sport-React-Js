@@ -4,8 +4,6 @@ import { Timestamp, collection, documentId, getDocs, writeBatch,where, query, ad
 import { db } from "../../firebase";
 import CheckOutForm from "./checkOutForm";
 
-
-
 const CheckOut = ()=>{
     const[cargando, setCargando] = useState(false);
     const[ordenId, setOrdenId] = useState("");

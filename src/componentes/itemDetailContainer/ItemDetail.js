@@ -1,5 +1,3 @@
-/*importaciones de react bootstrap y el componente itemCount*/
-
 import ItemCount from "../itemCount/itemCount";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -7,10 +5,6 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { cartContext } from "../context/cartContext";
 import Button from 'react-bootstrap/Button';
-
-
-
-/*Componente itemDetail donde muestra una card con mas datos sobre el auto y dentro de esta card se encuentra el componente itemCount para agregar o quitar ese producto del carrito*/
 
 
 const ItemDetail = ({img,titulo,descripcion,marca,precio,cantidad,id}) =>{
@@ -41,9 +35,11 @@ const ItemDetail = ({img,titulo,descripcion,marca,precio,cantidad,id}) =>{
                 </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
+
                 <ListGroup.Item><h5>Marca: {marca}</h5></ListGroup.Item>
                 <ListGroup.Item><h5>Precio: {precio}</h5></ListGroup.Item>
                 <ListGroup.Item><h5>Stock: {cantidad}</h5></ListGroup.Item>
+                
             </ListGroup>
             <Card.Body>
             {

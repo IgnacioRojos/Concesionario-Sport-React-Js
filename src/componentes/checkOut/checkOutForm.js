@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Button from "react-bootstrap/esm/Button";
 
-
-
 const CheckOutForm = ({onConfirm})=>{
     const [nombre,setNombre] = useState("")
     const [email,setEmail] = useState("")

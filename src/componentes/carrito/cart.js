@@ -26,10 +26,10 @@ const Cart = () => {
                             <Card.Img variant="top" src={item.img} style={{ width: '18rem' }}/>
                             <Card.Text>
                                 <h4>Marca: {item.marca}</h4> <br/>
+
                                 <h4>Precio: {item.precio}</h4><br/>
-                                <h4>cantidad: {item.cantidadAgregada}</h4>
-                                
-                                
+
+                                <h4>cantidad: {item.cantidadAgregada}</h4>  
                             </Card.Text>
                             
                             <Button onClick={()=> removeAuto(item.id)} variant="danger">Eliminar Auto</Button>
@@ -40,6 +40,7 @@ const Cart = () => {
                 <h3 className="total">Total: {getTotal()}</h3>
 
                 <Button onClick={()=> clearCart() } className="button" variant="danger"> Limpiar El Carrito</Button>
+                
                 <Button className="button" variant="info"><Link to={`/checkOut`} className="linkCheck">Finalizar La Compra</Link></Button>
             </div>
         )

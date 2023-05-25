@@ -1,5 +1,3 @@
-/*importaciones de useState, useEfect, componente itemDetail, el archivo asyncMock y css*/
-
 import { useEffect,useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
@@ -8,12 +6,8 @@ import { db } from "../../firebase";
 import {getDoc,doc} from 'firebase/firestore';
 
 
-/*componente que contiene al itemDetail utilizando un efecto para poder mostrar un solo item con sus datos*/
-
 const ItemDetailContainer = ()=>{
     const [auto, setAuto] = useState({})
-    /*const[loading, setLoading] = useState(true)*/
-
     const{autoId} = useParams()
 
     const filtroAutos = async (autoId) =>{

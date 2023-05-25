@@ -1,4 +1,3 @@
-/*Importaciones*/
 import NavBar from "./componentes/navBar/navBar"
 import './App.css';
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
@@ -8,10 +7,6 @@ import { CartProvider } from "./componentes/context/cartContext";
 import Cart  from "./componentes/carrito/cart"
 import CartWidget from "./componentes/cartWidget/cartWidget";
 import CheckOut from "./componentes/checkOut/checkOut";
-
-/*Funcion principal con el navBar,ItemListContainer donde enruté para que se muestre los autos por marca o vuelva al catalogo completo, por
-ultimo en cada tarjeta de los autos tiene un link hacia el detalle del auto*/
-
 
 
 function App() {

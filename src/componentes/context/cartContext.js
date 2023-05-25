@@ -1,8 +1,5 @@
 import { createContext, useState } from "react";
 
-
-
-
 export const cartContext = createContext({
     cart: []
 })
@@ -19,8 +16,6 @@ export const CartProvider = ({children }) =>{
             console.error("el auto ya fue agregado")
         }
     }
-
-    
 
     const removeAuto = (id) =>{
         const cartUpdated = cart.filter(c => c.id !== id)

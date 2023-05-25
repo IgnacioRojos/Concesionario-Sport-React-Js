@@ -1,9 +1,6 @@
 import {db} from './firebase';
 import { collection, getDocs, where, query} from 'firebase/firestore';
 
-
-
-
 export const getAutos = () =>{
     const coleccionAutos =  collection(db,"Autos2")
     return getDocs(coleccionAutos)
