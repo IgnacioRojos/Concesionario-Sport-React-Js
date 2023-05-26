@@ -27,7 +27,7 @@ fue utilizada para guardar las ventas.
 |Context|Este componente fue creado para almacenar funciones globales que pueden ser usadas en cualquier componente, entre las funciones se encuentra una que retorna el total de la venta, otra que devuelve la cantidad de items en el carrito,etc...|
 |Item|Componente que muestra una tarjeta con pocos datos, incluye un boton que redirecciona al detalle del auto|
 |ItemCount|Se creo este componente con la finalidad de crear un contador para ver la cantidad de autos que el usuario quiere comprar|
-|itemDetail|Es el componente que muestra una tarjeta con los detalles del vehiculo, desde alli puede seleccionar la cantidad de autos que quiere (este componente tiene a itemCount) al finalizar la tarjeta hay un boton que redirige al cart|
+|itemDetail|Es el componente que muestra una tarjeta con los detalles del vehiculo, desde alli puede seleccionar la cantidad de autos que quiere (este componente tiene a itemCount) al finalizar la tarjeta hay un boton que redirige al cart. El componente de encuentra en la carpeta de itemDetailContainer|
 |itemDetailContainer|Este componente se encarga de mostrar el itemDetail de cada uno de los Autos|
 |itemContainer|Como lo sugiere el nombre es el contenedor del itemList, en este componente se agrego un mensaje de bienvenida para el usuario|
 |itemList| Este componente se encarga de hacer un map a los item para mostrarlos en itemListContainer|
