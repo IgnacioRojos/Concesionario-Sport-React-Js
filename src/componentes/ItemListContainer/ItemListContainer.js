@@ -15,18 +15,21 @@ const ItemListConteiner = ({titulo}) =>{
     const {categoriaMarca} = useParams()
 
    
-    useEffect(()=>{
-        const asyncFunc = categoriaMarca ? ()=> getAutosPorCategoria(categoriaMarca) : getAutos
-        
-        asyncFunc(categoriaMarca)
-            .then(Response=>{
-                setArrayAutos(Response)
-            })
-            .catch(Error=>{
-                console.log(Error)
-            })
+    useEffect(() => {
+        const fetchData = async () => {
+            setArrayAutos([]); // Limpia mientras carga
+            try {
+                const data = categoriaMarca
+                    ? await getAutosPorCategoria(categoriaMarca)
+                    : await getAutos();
+                setArrayAutos(data);
+            } catch (error) {
+                console.error("Error al obtener autos:", error);
+            }
+        };
 
-    },[categoriaMarca])
+        fetchData();
+    }, [categoriaMarca]);
 
     
     if(arrayAutos.length===0){

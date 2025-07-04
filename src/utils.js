@@ -1,44 +1,34 @@
 import {db} from './firebase';
 import { collection, getDocs, where, query} from 'firebase/firestore';
 
-export const getAutos = () =>{
-    const coleccionAutos =  collection(db,"Autos2")
-    return getDocs(coleccionAutos)
-        .then((respuesta)=>{
-            const arrayDocumentos = respuesta.docs
-            const resultado = arrayDocumentos.map((doc)=>{
-                const id =doc.id;
-                const data = doc.data();
-                data.id = id;
-                return data;
-            })
-            return resultado
-          
-        })
-        .catch((err) =>{
-           console.log("error ") 
-        })
-}
+export const getAutos = async () => {
+    try {
+        const coleccionAutos = collection(db, "Autos2");
+        const respuesta = await getDocs(coleccionAutos);
+        return respuesta.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+    } catch (err) {
+        console.error("Error en getAutos:", err);
+        throw err;
+    }
+};
 
-export const getAutosPorCategoria = (categoriaMarca) =>{
-    const coleccionAutos =  collection(db,"Autos2")
-    const filtro = query(coleccionAutos, where("marca","==",categoriaMarca))
-    return getDocs(filtro)
-    .then((respuesta)=>{
-        const arrayDocumentos = respuesta.docs
-        const resultado = arrayDocumentos.map((doc)=>{
-            const id =doc.id;
-            const data = doc.data();
-            data.id = id;
-            return data;
-    })
-    return resultado 
-    
-    })
-    .catch((err) =>{
-        console.log(err) 
-    })
-}
+export const getAutosPorCategoria = async (categoriaMarca) => {
+    try {
+        const coleccionAutos = collection(db, "Autos2");
+        const filtro = query(coleccionAutos, where("marca", "==", categoriaMarca));
+        const respuesta = await getDocs(filtro);
+        return respuesta.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+    } catch (err) {
+        console.error("Error en getAutosPorCategoria:", err);
+        throw err;
+    }
+};
 
 
 
