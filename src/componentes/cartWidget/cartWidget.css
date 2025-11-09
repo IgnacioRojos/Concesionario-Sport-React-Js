@@ -1,3 +1,50 @@
-.linkCarrito{
-    text-decoration: none;
+.linkCarrito {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-blanco);
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+/* Imagen del carrito */
+.linkCarrito img {
+  width: 70px;
+  filter: drop-shadow(0 0 6px rgba(0, 123, 255, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.linkCarrito:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.6));
+}
+
+/* Burbuja de cantidad */
+.linkCarrito p {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: var(--color-azul-electrico);
+  color: var(--color-blanco);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 0 8px var(--color-sombra);
+  transition: background-color 0.3s ease;
+}
+
+.linkCarrito:hover p {
+  background-color: var(--color-hover);
+}
+
+/* Alineación general */
+.linkCarrito div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }

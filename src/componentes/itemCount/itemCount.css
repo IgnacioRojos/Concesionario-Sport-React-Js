@@ -1,16 +1,78 @@
-.controls{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-   
-    
-}
-.number{
-    margin-top: 20px;
-}
-.buttonComprar{
-    margin-top: 10px;
-    margin-left: 25px;
-    margin-right: 16px;
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secundario);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--color-sombra);
+  width: 250px;
+  margin: 20px auto;
+  transition: transform 0.3s ease;
 }
 
+.counter:hover {
+  transform: translateY(-3px);
+}
+
+/* ====== CONTROLES ====== */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+/* ====== BOTONES DE INCREMENTO / DECREMENTO ====== */
+.buttoninc,
+.buttondec {
+  background-color: var(--color-azul-electrico);
+  color: var(--color-blanco);
+  border: none;
+  border-radius: 6px;
+  font-size: 1.3rem;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttoninc:hover,
+.buttondec:hover {
+  background-color: var(--color-hover);
+  transform: scale(1.05);
+}
+
+/* ====== NÚMERO CENTRAL ====== */
+.number {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-texto-suave);
+  margin: 0;
+  width: 40px;
+  text-align: center;
+}
+
+/* ====== BOTÓN COMPRAR ====== */
+.buttonComprar {
+  background-color: var(--color-azul-electrico);
+  border: none;
+  color: var(--color-blanco);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttonComprar:hover {
+  background-color: var(--color-hover);
+  transform: scale(1.05);
+}
+
+.buttonComprar:disabled {
+  background-color: var(--color-gris-metalico);
+  cursor: not-allowed;
+  opacity: 0.7;
+}

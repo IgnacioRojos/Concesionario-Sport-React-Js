@@ -1,65 +1,52 @@
-import "./navBar.css"
-import Button from 'react-bootstrap/Button';
+import "./navBar.css";
+import Button from "react-bootstrap/Button";
 import CartWidget from "../cartWidget/cartWidget";
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-const navBar= () =>{
+const NavBar = () => {
+  return (
+    <nav className="header">
+      <div className="nav-left">
+        <Link to="/" className="tituloNegocio">
+          <h2>Concesionario <span>Sport</span></h2>
+        </Link>
+      </div>
 
-    return(
-        <nav className='header'>
+      <div className="botones">
+        <NavLink to="/" className="link">
+          <Button className="boton">Todos</Button>
+        </NavLink>
 
-            <Link to={`/`} className='tituloNegocio'> <h3>Concesionario Sport</h3> </Link>
+        <NavLink to="marca/fiat" className="link">
+          <Button className="boton">Fiat</Button>
+        </NavLink>
 
-            <div className='botones'>
-                <NavLink to="/"className= {({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : ""} id="boton">
+        <NavLink to="marca/wolsvagen" className="link">
+          <Button className="boton">Volkswagen</Button>
+        </NavLink>
 
-                    <Button className='boton' variant="light">Todos Los Autos</Button>
+        <NavLink to="marca/chevrolet" className="link">
+          <Button className="boton">Chevrolet</Button>
+        </NavLink>
 
-                </NavLink>
+        <NavLink to="marca/ford" className="link">
+          <Button className="boton">Ford</Button>
+        </NavLink>
 
-                <NavLink to={`marca/fiat`} className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : "" } id="boton">
+        <NavLink to="marca/toyota" className="link">
+          <Button className="boton">Toyota</Button>
+        </NavLink>
 
-                     <Button className='boton' variant="warning">Fiat</Button>
+        <NavLink to="marca/jeep" className="link">
+          <Button className="boton">Jeep</Button>
+        </NavLink>
+      </div>
 
-                </NavLink>
+      <div className="nav-right">
+        <CartWidget />
+      </div>
+    </nav>
+  );
+};
 
-                <NavLink to={`marca/wolsvagen`} className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : "" } id="boton">
-
-                     <Button className="boton" variant="info">Wolsvagen</Button>
-
-                </NavLink>
-
-                <NavLink to={`marca/chevrolet`} className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : ""} id="boton">
-
-                     <Button className="boton" variant="success">Chrevrolet</Button>
-
-                </NavLink>
-
-                <NavLink to={`marca/ford`} className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : ""} id="boton">
-
-                     <Button className="boton" variant="danger">Ford</Button>
-
-                </NavLink>
-
-                <NavLink to={`marca/toyota`} className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : ""} id="boton">
-
-                     <Button className='boton' variant="secondary">Toyota</Button>
-
-                </NavLink>
-
-                <NavLink to={`marca/jeep`} className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : ""} id="boton">
-
-                     <Button className='boton' variant="dark">Jeep</Button>
-                      
-                </NavLink>
-
-            </div>
-
-            <CartWidget/>
-
-        </nav>
-    )
-}
-
-export default navBar;
+export default NavBar;

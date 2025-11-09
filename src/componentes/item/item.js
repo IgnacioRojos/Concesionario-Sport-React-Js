@@ -1,36 +1,31 @@
 import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
-import "./item.css"
 import React from "react";
 import Button from 'react-bootstrap/Button';
+import "./item.css";
 
-const Item = ({id,titulo,marca,cantidad,precio,img})=>{
-    return(
-        <Card style={{ width: '18rem' }} className='tarjeta'>
+const Item = ({ id, titulo, marca, cantidad, precio, img }) => {
+  return (
+    <Card className="tarjeta">
+      <div className="tarjeta-img-container">
+        <Card.Img variant="top" src={img} className="tarjeta-img" />
+      </div>
 
-            <Card.Img variant="top" src={img} />
-            
-            <Card.Body>
+      <Card.Body className="tarjeta-body">
+        <Card.Title className="tarjeta-titulo">{titulo}</Card.Title>
 
-                <Card.Title><h3>{titulo}</h3></Card.Title>
+        <Card.Text className="tarjeta-info">
+          <p><strong>Marca:</strong> {marca}</p>
+          <p><strong>Precio:</strong> ${precio}</p>
+          <p><strong>Stock:</strong> {cantidad}</p>
+        </Card.Text>
 
-                <Card.Text>
+        <Button className="btn-detalle">
+          <Link to={`/item/${id}`} className="Option">Ver Detalle</Link>
+        </Button>
+      </Card.Body>
+    </Card>
+  );
+};
 
-                    <h5>Marca: {marca}</h5><br/>
-
-                    <h5>Precio: {precio}</h5><br/>
-
-                    <h5>Stock: {cantidad}</h5>
-
-                </Card.Text>
-                
-                <Button variant="info"><Link to={`/item/${id}`} className="Option">Ver Detalle</Link></Button>
-
-            </Card.Body>
-        </Card>
-        
-
-    )
-}
-
-export default Item
+export default Item;

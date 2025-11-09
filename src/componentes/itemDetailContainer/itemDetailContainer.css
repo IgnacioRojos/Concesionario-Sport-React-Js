@@ -1,8 +1,55 @@
-.ItemDetailConteiner2{
-    margin-left: 760px;
-    margin-top: 50px;
+/* ====== CONTENEDOR PRINCIPAL (CARGANDO) ====== */
+.ItemDetailConteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background-color: var(--bg-principal);
+  color: var(--color-texto-suave);
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
 }
 
-.ItemDetailConteiner{
-    margin-top: 50px;
+/* ====== CONTENEDOR DE DETALLE ====== */
+.ItemDetailConteiner2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 20px;
+  background-color: var(--bg-secundario);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--color-sombra);
+  margin: 40px auto;
+  max-width: 1200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ItemDetailConteiner2:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.25);
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+  .ItemDetailConteiner2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ItemDetailConteiner2 {
+    padding: 20px 10px;
+    margin: 20px;
+  }
+
+  .ItemDetailConteiner {
+    font-size: 1.4rem;
+  }
 }

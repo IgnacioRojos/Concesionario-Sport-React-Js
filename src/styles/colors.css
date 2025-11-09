@@ -1,0 +1,17 @@
+:root {
+  /* Paleta principal del concesionario */
+  --color-azul-oscuro: #0A192F;
+  --color-gris-metalico: #C0C0C0;
+  --color-negro-grafito: #1C1C1C;
+  --color-blanco: #FFFFFF;
+  --color-azul-electrico: #007BFF;
+
+  /*  Colores auxiliares */
+  --color-hover: #0056b3;
+  --color-sombra: rgba(0, 123, 255, 0.25);
+  --color-texto-suave: #E0E0E0;
+
+  /* Fondo general */
+  --bg-principal: var(--color-azul-oscuro);
+  --bg-secundario: var(--color-negro-grafito);
+}

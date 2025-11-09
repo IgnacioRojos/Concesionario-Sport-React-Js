@@ -1,12 +1,134 @@
-.boton{
-    margin-left: 15px;
-    
+/* ==========================
+   NAVBAR PRINCIPAL
+========================== */
+.header {
+  background: linear-gradient(90deg, var(--color-azul-oscuro) 0%, #0a192f 100%);
+  color: var(--color-blanco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-#boton{
-    text-decoration: none;
+/* ==========================
+   LOGO / TÍTULO
+========================== */
+.tituloNegocio {
+  text-decoration: none;
+  color: var(--color-blanco);
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.tituloNegocio{
-    text-decoration: none;
+.tituloNegocio h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.tituloNegocio span {
+  color: var(--color-azul-electrico);
+}
+
+.tituloNegocio:hover {
+  color: var(--color-azul-electrico);
+}
+
+/* ==========================
+   BOTONERA DE MARCAS
+========================== */
+.botones {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+}
+
+/* Botones generales */
+.boton {
+  background-color: var(--color-negro-grafito);
+  color: var(--color-blanco);
+  border: 1px solid var(--color-azul-electrico);
+  border-radius: 25px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 119, 255, 0.15);
+}
+
+.boton:hover {
+  background-color: var(--color-azul-electrico);
+  color: var(--color-blanco);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 119, 255, 0.25);
+}
+
+/* Botón activo (marca seleccionada) */
+.active .boton {
+  background-color: var(--color-azul-electrico);
+  color: var(--color-blanco);
+}
+
+/* ==========================
+   CARRITO (DERECHA)
+========================== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.nav-right img {
+  transition: transform 0.2s ease;
+}
+
+.nav-right img:hover {
+  transform: scale(1.1);
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+@media (max-width: 992px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .tituloNegocio h2 {
+    font-size: 1.6rem;
+  }
+
+  .botones {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .boton {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+  }
+
+  .tituloNegocio h2 {
+    font-size: 1.4rem;
+  }
 }

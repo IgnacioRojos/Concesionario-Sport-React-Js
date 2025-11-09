@@ -1,32 +1,109 @@
-.linkCheck{
-    text-decoration: none;
-    color: white;
+/* ====== ESTRUCTURA GENERAL ====== */
+.cardCarrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--bg-secundario);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--color-sombra);
+  width: 90%;
+  max-width: 1000px;
 }
 
-.button{
-    margin-left: 20px;
-    margin-top: 20px;
-    
-}
-.cardCarrito{
-    margin-top: 20px;
-}
-
-.total{
-    margin-top: 20px;
-}
-
-.cart-item-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+/* ====== ITEMS ====== */
+.cart-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-azul-oscuro);
+  color: var(--color-blanco);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.advertencia{
-    margin-top: 50px;
+.cart-item-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.3);
 }
-.option{
-    text-decoration: none;
-    color: white;
+
+.cart-item-container img {
+  border-radius: 10px;
+  width: 18rem;
+  object-fit: cover;
+  border: 2px solid var(--color-gris-metalico);
+}
+
+.cart-item-container h2,
+.cart-item-container h4 {
+  margin: 5px 0;
+  color: var(--color-texto-suave);
+}
+
+/* ====== TOTAL Y BOTONES ====== */
+.total {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-azul-electrico);
+  text-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+
+.button {
+  margin: 15px 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--color-azul-electrico);
+  color: var(--color-blanco);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--color-hover);
+  transform: translateY(-2px);
+}
+
+/* ====== LINKS ====== */
+.linkCheck,
+.option {
+  text-decoration: none;
+  color: var(--color-blanco);
+  font-weight: 600;
+}
+
+.linkCheck:hover,
+.option:hover {
+  text-decoration: underline;
+}
+
+/* ====== MENSAJE VACÍO ====== */
+.advertencia {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--color-texto-suave);
+  letter-spacing: 0.5px;
+}
+
+.advertencia + button {
+  display: block;
+  margin: 25px auto;
+  background-color: var(--color-azul-electrico);
+  color: var(--color-blanco);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 25px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.advertencia + button:hover {
+  background-color: var(--color-hover);
+  transform: scale(1.05);
 }

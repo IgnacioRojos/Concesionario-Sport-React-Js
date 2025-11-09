@@ -1,5 +1,35 @@
-.listGroup{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
- 
+.listGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Se adapta al ancho */
+  gap: 2rem; /* Espaciado entre cards */
+  justify-items: center;
+  align-items: stretch;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ajustes generales para mantener armonía visual */
+.listGroup > * {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listGroup > *:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* === Responsividad adicional === */
+@media (max-width: 992px) {
+  .listGroup {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .listGroup {
+    grid-template-columns: 1fr; /* Una card por fila en móviles */
+    padding: 1rem;
+  }
 }

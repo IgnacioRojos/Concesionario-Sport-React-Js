@@ -5,6 +5,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { cartContext } from "../context/cartContext";
 import Button from 'react-bootstrap/Button';
+import "./ItemDetail.css"
 
 
 const ItemDetail = ({img,titulo,descripcion,marca,precio,cantidad,id}) =>{
