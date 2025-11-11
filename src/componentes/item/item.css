@@ -1,24 +1,29 @@
-/* ====== CARD PRINCIPAL ====== */
+/* ==========================
+   CARD PRINCIPAL
+========================== */
 .tarjeta {
   width: 18rem;
   border: none;
   border-radius: 15px;
   overflow: hidden;
-  background-color: var(--color-negro-grafito);
-  color: var(--color-blanco);
+  background-color: var(--color-secundario); /* Fondo grafito */
+  color: var(--color-texto);
   margin: 25px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transform: translateY(0);
 }
 
 .tarjeta:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px var(--color-sombra);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px var(--color-sombra);
 }
 
-/* ====== IMAGEN ====== */
+/* ==========================
+   IMAGEN DEL AUTO
+========================== */
 .tarjeta-img-container {
-  background: linear-gradient(to bottom, #1C1C1C, #0A192F);
+  background: linear-gradient(to bottom, #2a2a2a, #1b1b1b);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,61 +32,100 @@
 
 .tarjeta-img {
   width: 100%;
-  height: 180px;
+  height: 190px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
 
 .tarjeta:hover .tarjeta-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
-/* ====== CUERPO ====== */
+/* ==========================
+   CONTENIDO
+========================== */
 .tarjeta-body {
-  padding: 1.2rem;
+  padding: 1.3rem;
+  text-align: center;
 }
 
 .tarjeta-titulo {
   font-size: 1.3rem;
   font-weight: 700;
-  text-align: center;
-  color: var(--color-blanco);
   text-transform: uppercase;
-  margin-bottom: 15px;
-  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  color: var(--color-acento); /* Dorado suave */
+  letter-spacing: 0.8px;
 }
 
 .tarjeta-info p {
   font-size: 0.95rem;
-  margin: 4px 0;
-  color: var(--color-gris-metalico);
+  margin: 5px 0;
+  color: black;
 }
 
-/* ====== BOTÓN ====== */
+.tarjeta-info strong {
+  color: var(--color-acento) !important;
+  font-weight: 600;
+}
+
+/* ==========================
+   BOTÓN "VER DETALLE"
+========================== */
 .btn-detalle {
   display: block;
   width: 100%;
-  background-color: var(--color-azul-electrico);
-  border: none;
+  background-color: var(--color-principal) !important;
+  border: none !important;
   border-radius: 25px;
   padding: 10px;
   margin-top: 15px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px var(--color-sombra)!important;
 }
 
 .btn-detalle:hover {
-  background-color: var(--color-hover);
-  transform: scale(1.03);
+  background-color: var(--color-hover) !important;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px var(--color-sombra) !important;
 }
 
-/* ====== LINK INTERNO ====== */
+.btn-detalle:focus,
+.btn-detalle:active,
+.btn-detalle:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* ==========================
+   LINK INTERNO
+========================== */
 .Option {
   text-decoration: none;
-  color: var(--color-blanco);
+  color: var(--color-texto) !important;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .Option:hover {
-  color: var(--color-texto-suave);
+  color: var(--color-acento) !important;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  .tarjeta {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .tarjeta-img {
+    height: 160px;
+  }
+
+  .tarjeta-titulo {
+    font-size: 1.1rem;
+  }
 }

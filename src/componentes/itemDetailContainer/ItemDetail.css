@@ -1,93 +1,105 @@
-/* ====== CARD GENERAL ====== */
 .card {
   background-color: var(--bg-secundario);
-  color: var(--color-texto-suave);
-  border: 1px solid var(--color-gris-metalico);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px var(--color-sombra);
+  color: var(--color-texto);
+  border: 1px solid var(--color-principal);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px var(--color-sombra);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 20px auto;
+  margin: 25px auto;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(193, 18, 31, 0.4);
 }
 
 /* ====== IMAGEN DEL AUTO ====== */
 .card img {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
-  border-bottom: 2px solid var(--color-azul-electrico);
+  border-bottom: 3px solid var(--color-principal);
 }
 
 /* ====== CUERPO DE LA CARD ====== */
 .card-body {
-  padding: 20px;
+  padding: 22px;
   text-align: center;
 }
 
 .card-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-blanco);
-  margin-bottom: 10px;
+  color: var(--color-acento);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
 }
 
 .card-text {
-  font-size: 0.95rem;
-  color: var(--color-texto-suave);
+  font-size: 1rem;
+  color: var(--color-texto);
+  opacity: 0.9;
   margin-bottom: 15px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* ====== LISTA DE DETALLES ====== */
 .list-group-item {
-  background-color: var(--color-azul-oscuro);
-  color: var(--color-blanco);
+  background-color: #2a2a2a;
+  color: var(--color-texto);
   border: none;
-  border-top: 1px solid var(--color-gris-metalico);
+  border-top: 1px solid rgba(255,255,255,0.1);
   font-size: 1rem;
   text-align: center;
   padding: 12px 10px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .list-group-item:hover {
-  background-color: var(--color-azul-electrico);
+  background-color: var(--color-principal);
+  color: var(--color-acento);
 }
 
 /* ====== BOTONES ====== */
 .button {
   display: inline-block;
-  margin: 10px auto;
-  background-color: var(--color-azul-electrico);
-  border: none;
-  color: var(--color-blanco);
+  margin: 12px auto;
+  background-color: var(--color-principal) !important;
+  border: none !important;
+  color: var(--color-texto) !important;
   font-weight: 600;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 8px;
   text-transform: uppercase;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .button:hover {
   background-color: var(--color-hover);
   transform: scale(1.05);
+  box-shadow: 0 0 12px var(--color-sombra);
 }
 
 /* ====== LINK FINALIZAR COMPRA ====== */
 .Option {
   text-decoration: none;
-  color: var(--color-blanco);
+  color: inherit;
 }
 
 .Option:hover {
   text-decoration: underline;
+}
+
+/* ====== CORRECCIÓN BOOTSTRAP ====== */
+.button:focus,
+.button:active,
+.button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 /* ====== RESPONSIVE ====== */
@@ -101,7 +113,7 @@
   }
 
   .card-title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 
   .list-group-item {

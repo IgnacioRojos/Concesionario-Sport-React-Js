@@ -1,17 +1,13 @@
 :root {
-  /* Paleta principal del concesionario */
-  --color-azul-oscuro: #0A192F;
-  --color-gris-metalico: #C0C0C0;
-  --color-negro-grafito: #1C1C1C;
-  --color-blanco: #FFFFFF;
-  --color-azul-electrico: #007BFF;
+  /* Paleta principal */
+  --color-principal: #C1121F;   /* Rojo deportivo intenso */
+  --color-secundario: #1B1B1B;  /* Fondo oscuro metálico */
+  --color-acento: #F5CB5C;      /* Dorado suave para detalles */
+  --color-texto: #FAFAFA;       /* Blanco puro */
+  --color-hover: #780000;       /* Rojo profundo hover */
+  --color-sombra: rgba(193, 18, 31, 0.3);
 
-  /*  Colores auxiliares */
-  --color-hover: #0056b3;
-  --color-sombra: rgba(0, 123, 255, 0.25);
-  --color-texto-suave: #E0E0E0;
-
-  /* Fondo general */
-  --bg-principal: var(--color-azul-oscuro);
-  --bg-secundario: var(--color-negro-grafito);
+  /* Fondos */
+  --bg-principal: var(--color-principal);
+  --bg-secundario: var(--color-secundario);
 }

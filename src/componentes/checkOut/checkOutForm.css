@@ -1,0 +1,106 @@
+/* === Contenedor general === */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 35px;
+  background: var(--color-secundario);
+  box-shadow: 0 12px 25px var(--color-sombra);
+  border-radius: 14px;
+  color: var(--color-texto);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(193, 18, 31, 0.35);
+}
+
+/* === Formulario === */
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* === Labels === */
+.Label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: var(--color-texto);
+  font-size: 1rem;
+}
+
+/* === Inputs === */
+.Input {
+  margin-top: 6px;
+  padding: 10px 14px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #2a2a2a;
+  color: var(--color-texto);
+  transition: all 0.3s ease;
+}
+
+.Input:focus {
+  border-color: var(--color-acento);
+  box-shadow: 0 0 8px rgba(245, 203, 92, 0.4);
+}
+
+/* === Botón === */
+.Button {
+  background-color: var(--color-principal) !important;
+  border: none !important;
+  color: var(--color-texto) !important;
+  font-weight: 600 !important;
+  padding: 12px 20px !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease;
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+
+.Button:hover {
+  background-color: var(--color-hover) !important;
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(193, 18, 31, 0.35);
+}
+
+/* === Mensaje de error === */
+p {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--color-acento);
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* === Animación de aparición === */
+.container {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Responsividad === */
+@media (max-width: 576px) {
+  .container {
+    margin: 20px;
+    padding: 25px;
+  }
+
+  .Input {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .Button {
+    font-size: 0.9rem !important;
+  }
+}

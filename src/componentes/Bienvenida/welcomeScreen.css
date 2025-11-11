@@ -1,0 +1,59 @@
+/* === Splash Screen === */
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  z-index: 9999;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.welcome-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Logo */
+.welcome-logo {
+  width: 160px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px var(--color-principal));
+  animation: zoomIn 1.5s ease-in-out;
+}
+
+/* Texto */
+.welcome-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: var(--color-acento);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: fadeInUp 1.8s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

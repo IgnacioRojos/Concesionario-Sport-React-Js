@@ -1,7 +1,102 @@
+/* ==========================
+   CONTENEDOR PRINCIPAL
+========================== */
+.itemListContainer {
+  background: var(--bg-secundario);
+  color: var(--color-texto);
+  padding: 50px 30px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.itemListContainer h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  color: var(--color-acento);
+}
+
+/* ==========================
+   CARD DE AUTO
+========================== */
+.itemCard {
+  background: var(--color-secundario);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.itemCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px var(--color-sombra);
+}
+
+/* ==========================
+   IMAGEN DEL AUTO
+========================== */
+.itemCard img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--color-principal);
+}
+
+/* ==========================
+   CONTENIDO INTERIOR
+========================== */
+.itemCard-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.itemCard-content h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-bottom: 10px;
+}
+
+.itemCard-content p {
+  font-size: 0.95rem;
+  color: #d0d0d0;
+  margin-bottom: 10px;
+}
+
+/* ==========================
+   BOTÓN DE ACCIÓN
+========================== */
+.itemCard-content .btn-ver {
+  background: var(--color-acento);
+  border: none;
+  color: var(--color-secundario);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.itemCard-content .btn-ver:hover {
+  background: var(--color-hover);
+  color: var(--color-texto);
+  transform: scale(1.05);
+}
+
+/* ==========================
+   ALERTAS Y MENSAJES
+========================== */
 .tituloAlerta {
   margin-top: 60px;
   text-align: center;
-  color: var(--color-blanco);
+  color: black;
   font-weight: 600;
   font-size: 1.6rem;
   letter-spacing: 0.5px;
@@ -15,16 +110,16 @@
   text-align: center;
   border-radius: 12px;
   padding: 25px;
-  background-color: var(--color-azul-electrico);
-  color: var(--color-blanco);
-  border: 1px solid var(--color-gris-metalico);
+  background-color: var(--color-principal);
+  color: var(--color-texto);
+  border: 1px solid var(--color-acento);
   box-shadow: 0 6px 18px var(--color-sombra);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .mensaje:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.35);
+  box-shadow: 0 8px 20px var(--color-sombra);
 }
 
 /* ====== BOTÓN DE CIERRE ====== */
@@ -33,9 +128,9 @@
 }
 
 .alert-btn-container button {
-  background-color: var(--color-gris-metalico);
+  background-color: var(--color-acento);
   border: none;
-  color: var(--color-azul-oscuro);
+  color: var(--color-secundario);
   font-weight: 600;
   padding: 8px 18px;
   border-radius: 6px;
@@ -44,6 +139,31 @@
 
 .alert-btn-container button:hover {
   background-color: var(--color-hover);
-  color: var(--color-blanco);
+  color: var(--color-texto);
   transform: scale(1.05);
+}
+
+/* ==========================
+   ANIMACIÓN DE ENTRADA
+========================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  .itemListContainer {
+    padding: 30px 15px;
+  }
+
+  .itemCard img {
+    height: 160px;
+  }
+
+  .itemCard-content h2 {
+    font-size: 1rem;
+  }
 }

@@ -3,6 +3,7 @@ import { cartContext } from "../context/cartContext";
 import { Timestamp, collection, documentId, getDocs, writeBatch,where, query, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import CheckOutForm from "./checkOutForm";
+import "./checkOut.css"
 
 const CheckOut = ()=>{
     const[cargando, setCargando] = useState(false);

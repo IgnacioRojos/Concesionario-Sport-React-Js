@@ -1,0 +1,99 @@
+/* === Contenedor principal === */
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 80vh;
+  background: linear-gradient(180deg, var(--bg-secundario) 0%, #121212 100%);
+  color: var(--color-texto);
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* === Título principal === */
+.checkout-container h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-acento); /* Dorado */
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(245, 203, 92, 0.2);
+}
+
+/* === Estado de carga === */
+.loading {
+  font-size: 1.4rem;
+  color: var(--color-texto);
+  font-weight: 600;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* === Mensaje de orden final === */
+.order-success {
+  background-color: var(--color-secundario); /* Fondo grafito */
+  color: var(--color-acento); /* Dorado */
+  border: 2px solid var(--color-acento);
+  border-radius: 14px;
+  padding: 25px 30px;
+  max-width: 520px;
+  box-shadow: 0 6px 18px var(--color-sombra);
+  font-weight: 600;
+  margin-top: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-success:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 22px rgba(245, 203, 92, 0.25);
+}
+
+.order-success span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: var(--color-principal); /* Rojo deportivo */
+  font-weight: 700;
+}
+
+/* === Botón o enlace dentro del checkout === */
+.checkout-btn {
+  background-color: var(--color-principal);
+  color: var(--color-texto);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background-color: var(--color-hover);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--color-acento);
+}
+
+/* === Responsive === */
+@media (max-width: 576px) {
+  .checkout-container {
+    padding: 40px 15px;
+  }
+
+  .checkout-container h1 {
+    font-size: 1.7rem;
+  }
+
+  .order-success {
+    font-size: 0.95rem;
+    padding: 20px;
+  }
+}

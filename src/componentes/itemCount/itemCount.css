@@ -4,17 +4,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-secundario);
-  padding: 20px;
-  border-radius: 12px;
+  background-color: var(--color-secundario);
+  padding: 22px;
+  border-radius: 14px;
   box-shadow: 0 4px 15px var(--color-sombra);
-  width: 250px;
-  margin: 20px auto;
-  transition: transform 0.3s ease;
+  width: 260px;
+  margin: 25px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .counter:hover {
   transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(193, 18, 31, 0.35);
 }
 
 /* ====== CONTROLES ====== */
@@ -23,56 +24,97 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 /* ====== BOTONES DE INCREMENTO / DECREMENTO ====== */
 .buttoninc,
 .buttondec {
-  background-color: var(--color-azul-electrico);
-  color: var(--color-blanco);
-  border: none;
-  border-radius: 6px;
+  background-color: var(--color-principal) !important;
+  color: var(--color-texto) !important;
+  border: 2px solid transparent;
+  border-radius: 8px;
   font-size: 1.3rem;
-  width: 40px;
-  height: 40px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 42px;
+  height: 42px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px var(--color-sombra) !important;
+  border: none !important;
+  outline: none !important;
 }
 
 .buttoninc:hover,
 .buttondec:hover {
-  background-color: var(--color-hover);
-  transform: scale(1.05);
+  background-color: var(--color-hover) !important;
+  transform: scale(1.08);
+  border-color: var(--color-acento) !important;
+  border: none !important;
+  outline: none !important;
+  
 }
 
 /* ====== NÚMERO CENTRAL ====== */
 .number {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: var(--color-texto-suave);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-acento);
   margin: 0;
-  width: 40px;
+  width: 50px;
   text-align: center;
+  letter-spacing: 0.5px;
 }
 
 /* ====== BOTÓN COMPRAR ====== */
 .buttonComprar {
-  background-color: var(--color-azul-electrico);
-  border: none;
-  color: var(--color-blanco);
+  background-color: var(--color-principal) !important;
+  border: none !important;
+  color: var(--color-texto);
   font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--color-sombra) !important;
+  outline: none !important;
 }
 
 .buttonComprar:hover {
-  background-color: var(--color-hover);
+  background-color: var(--color-hover) !important;
   transform: scale(1.05);
+  border: none !important;
+  box-shadow: 0 6px 16px rgba(193, 18, 31, 0.4);
+  color: var(--color-acento);
+  outline: none !important;
 }
 
 .buttonComprar:disabled {
-  background-color: var(--color-gris-metalico);
+  background-color: #444;
+  color: #999;
   cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 0.6;
+  box-shadow: none;
+  outline: none !important;
 }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .counter {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .controls {
+    gap: 15px;
+  }
+
+  .number {
+    font-size: 1.3rem;
+  }
+
+  .buttonComprar {
+    width: 100%;
+  }
+}
+
